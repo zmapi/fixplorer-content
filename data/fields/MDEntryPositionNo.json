@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "In <a href=\"glossary/mbo_order_book\">MBO book</a>, used to display queue position of an order in it's price level."
+}

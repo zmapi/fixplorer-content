@@ -1,0 +1,13 @@
+{
+	"md": true,
+	"fields": [
+		{"name": "SubscriptionRequestType", "required": true},
+		{"name": "MarketDepth", "required": true},
+		{"name": "AggregatedBook", "required": false},
+		{"name": "MDReqGrp", "required": true},
+		{"name": "ZMInstrumentID", "required": true},
+		{"name": "MarketSegmentScopeGrp", "required": false},
+		{"name": "ZMSubscriptionSpeed", "required": false}
+	],
+	"short_description": "Request message for getting market data updates or snapshots."
+}

@@ -1,0 +1,14 @@
+<p>RawData can be any arbitrary data.</p>
+
+<p>RawData is encoded in a specific way depending on which codec is used.</p>
+
+<br/>
+
+<p>FIX:</p>
+<p>The field must be prefixed with RawDataLength field to specify the number of bytes of raw data. Raw data bytes can contain delimiter bytes. Raw data field must be terminated with a delimiter byte just like any other FIX field value. Delimiter byte is not counted in RawDataLength byte count.</p>
+
+<p>JSON:</p>
+<p>The data is encoded in base64 string.</p>
+
+<p>SBE:</p>
+<p>data element is used.</p>

@@ -1,0 +1,4 @@
+{
+	"type": "MonthYear",
+	"short_description": "Ending maturity month year for an option class."
+}

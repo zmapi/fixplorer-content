@@ -1,0 +1,7 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "ZMTickerID", "required": true},
+		{"name": "ZMSubscription", "required": true}
+	]
+}

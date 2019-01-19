@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>Reference price for the current trading price range usually representing the mid price between the <a href="fields/HighLimitPrice">HighLimitPrice</a> and <a href="fields/LowLimitPrice">LowLimitPrice</a>. The value may be the settlement price or closing price of the prior trading day.</p>

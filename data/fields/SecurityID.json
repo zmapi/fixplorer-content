@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "Security identifier value of <a href=\"fields/SecurityIDSource\">SecurityIDSource</a>."
+}

@@ -1,0 +1,2 @@
+<p>GetTickerFields capability is provided when the module supports <a
+href="msgtypes/ZMGetInstrumentFields">ZMGetInstrumentFields request</a>.</p>

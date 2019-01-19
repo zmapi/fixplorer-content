@@ -1,0 +1,10 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "SubscriptionRequestType", "required": true},
+		{"name": "MarketID", "comment": "Must be specified if not a snapshot only request. Conditionally required if MarketSegmentID is specified."},
+		{"name": "MarketSegmentID", "comment": "Must be specified if not a snapshot only request."}
+	],
+	"short_description": "Request message for getting information about market structure."
+}

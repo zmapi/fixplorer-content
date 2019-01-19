@@ -1,0 +1,6 @@
+{
+	"short_description": "Describes the maturity rules for the given set of strikes.",
+	"fields": [
+		{"name": "NoMaturityRules", "required": true}
+	]
+}

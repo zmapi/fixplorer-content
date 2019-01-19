@@ -1,0 +1,5 @@
+<p>MarketDataRequest message is a general request for market data on selected <a href="fields/ZMInstrumentID">instrument</a>.</p>
+
+<p>A successful market data request returns a <a href="msgtypes/ZMMarketDataRequestResponse">ZMMarketDataRequestResponse message</a>.</p>
+
+<p>One or more <a href="msgtypes/MarketDataSnapshotFullRefresh">MarketDataSnapshotFullRefresh</a> messages and subsequently <a href="msgtypes/MarketDataIncrementalRefresh">MarketDataIncrementalRefresh</a> messages shall be emitted via PUB if subscription is requested.</p>

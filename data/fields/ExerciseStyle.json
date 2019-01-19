@@ -1,0 +1,10 @@
+{
+	"type": "int",
+	"short_description": "Type of exercise for a derivative instrument.",
+	"values": {
+		"0": "European",
+		"1": "American",
+		"2": "Bermuda",
+		"99": "Other"
+	}
+}

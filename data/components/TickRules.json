@@ -1,0 +1,6 @@
+{
+	"short_description": "Specifies price tick rules for the instrument.",
+	"fields": [
+		{"name": "NoTickRules", "required": true}
+	]
+}

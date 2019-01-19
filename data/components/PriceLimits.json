@@ -1,0 +1,8 @@
+{
+	"short_description": "Specifies the price limits that are valid for trading.",
+	"fields": [
+		{"name": "LowLimitPrice"},
+		{"name": "HighLimitPrice"},
+		{"name": "TradingReferencePrice"}
+	]
+}

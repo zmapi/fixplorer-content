@@ -1,0 +1,6 @@
+{
+	"short_description": "List of snapshots. Contains one snapshot for each <a href=\"fields/MarketID\">market</a> requested.",
+	"fields": [
+		{"name": "NoMDFullGrps", "required": true}
+	]
+}

@@ -1,0 +1,12 @@
+<p>str field representing month of a year. An optional day of the month or week code can be appended</p>
+
+<p>Valid formats:</p>
+<p>YYYYMM</p>
+<p>YYYYMMDD</p>
+<p>YYYYMMWW</p>
+
+<p>Valid values:</p>
+<p>YYYY: 0000-9999; MM: 01-12; DD: 01-31; WW: w1, w2, w3, w4, w5</p>
+
+<p>Examples:</p>
+<p>YYYYMM: "200303", YYYYMMDD: "20030320", YYYYMMWW: "200303w2"

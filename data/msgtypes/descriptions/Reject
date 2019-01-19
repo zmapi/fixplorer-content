@@ -1,0 +1,1 @@
+<p>The Reject message should be issued when a message is received but cannot be properly processed due to a session-level rule violation, such as invalid <a href="fields/MsgType">MsgType</a> or otherwise malformed message payload.</p>

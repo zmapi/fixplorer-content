@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Reference price for the current trading price range."
+}

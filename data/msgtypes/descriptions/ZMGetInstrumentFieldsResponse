@@ -1,0 +1,3 @@
+<p>ZMGetInstrumentFieldsResponse is a response to <a href="msgtypes/SecurityListRequest">SecurityListRequest request</a>.</p>
+
+<p>Every connector has different set of fields relevant when searching instruments with <a href="msgtypes/SecurityListRequest">SecurityListRequest</a>. This message contains list of fields (search criteria) that are used with the SecurityListRequest message.</p>

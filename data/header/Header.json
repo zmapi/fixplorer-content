@@ -1,0 +1,10 @@
+{
+	"md": true,
+	"ac": true,
+	"fields": [
+		{"name": "MsgType", "required": true},
+		{"name": "ZMSendingTime"},
+		{"name": "ZMEndpoint"},
+		{"name": "MsgSeqNum"}
+	]
+}

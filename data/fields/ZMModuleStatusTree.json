@@ -1,0 +1,4 @@
+{
+	"type": "RawData",
+	"short_description": "Contains a tree structure of module statuses encoded in JSON."
+}

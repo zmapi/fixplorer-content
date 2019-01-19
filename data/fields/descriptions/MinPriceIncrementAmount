@@ -1,0 +1,1 @@
+<p>Actual monetary value of the minimum price increment. When ContractMultiplier is defined this field can be computed by multiplying MinPriceIncrement by ContractMultiplier.</p>

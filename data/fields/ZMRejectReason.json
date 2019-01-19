@@ -1,0 +1,16 @@
+{
+	"type": "int",
+	"short_description": "Code to identify reason for a <a href=\"msgtypes/ZMReject\">ZMReject</a> message.",
+	"values": {
+		"0": "Other",
+		"1": "Invalid value",
+		"3": "Invalid <a href=\"fields/MsgType\">MsgType</a>",
+		"4": "Unknown instrument",
+		"5": "Insufficient permissions",
+		"6": "Required field is missing",
+		"7": "Conditionally required field is missing",
+		"8": "Invalid price increment",
+		"9": "Unsupported value",
+		"10": "Unsupported <a href=\"fields/MsgType\">MsgType</a>"
+	}
+}

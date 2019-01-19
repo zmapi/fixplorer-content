@@ -1,0 +1,15 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "ZMInstrumentID"},
+		{"name": "MarketID"},
+		{"name": "TradingSessionID"},
+		{"name": "SecurityTradingStatus"},
+		{"name": "SecurityTradingEvent"},
+		{"name": "MarketMakerActivity"},
+		{"name": "FastMarketIndicator"},
+		{"name": "HaltReason"}
+	],
+	"short_description": "Security status update or reply message to SecurityStatusRequest request."
+}

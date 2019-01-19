@@ -1,0 +1,8 @@
+{
+	"md": true,
+	"ac": true,
+	"fields": [
+		{"name": "ZMNoInstrumentFields", "required": true}
+	],
+	"short_description": "Reply message for ZMGetInstrumentFields request"
+}

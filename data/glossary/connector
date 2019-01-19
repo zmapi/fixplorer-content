@@ -1,0 +1,1 @@
+<p>Connectors are the leaves of the <a href="glossary/module_tree">module tree</a>. Connectors provide bridge between third party API and ZMAPI. Connectors do not need to (and should not to prevent code duplication) provide full ZMAPI abstraction. Middleware modules provide the full ZMAPI standardization based on the weak standardization provided by connectors.</p>

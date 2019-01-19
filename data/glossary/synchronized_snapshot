@@ -1,0 +1,1 @@
+</p>Synchronized snapshot is emitted via PUB channel and is synchronized to the data stream. Synchronized snapshot will reset the state of the market as specified by the snapshot. Following <a href="msgtypes/MarketDataIncrementalRefresh">MarketDataIncrementalRefresh</a> messages are incrementally altering this state.</p>

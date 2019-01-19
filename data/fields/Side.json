@@ -1,0 +1,8 @@
+{
+	"type": "char",
+	"short_description": "Side of the order.",
+	"values": {
+		"1": "Buy",
+		"2": "Sell"
+	}
+}

@@ -1,0 +1,5 @@
+<p>SecurityStatus message contains status of a <a href="glossary/instrument">instrument</a>. Information like trading status, corporate actions or financial status of a company may be reported.</p>
+
+<p>SecurityStatus messages are emitted via PUB socket as a result of subscription defined in a <a href="msgtypes/SecurityStatusRequest">SecurityStatusRequest</a> message</p>
+
+<p>TODO: Standardize halt reasons. Instead of having many boolean fields, use single multiflag field. FIX5.0SP2 definition is quite messy here.</p>

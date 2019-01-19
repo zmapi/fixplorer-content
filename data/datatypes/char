@@ -1,0 +1,2 @@
+<p>Single character value, can include any alphanumeric character or punctuation
+except the delimiter. All char fields are case sensitive (i.e. 'm' != 'M').</p>

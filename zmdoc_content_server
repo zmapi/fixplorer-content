@@ -1,0 +1,659 @@
+#!/usr/bin/env python3
+
+import asyncio
+import aiohttp
+import json
+import os
+import sys
+import signal
+import logging
+import argparse
+import urllib.parse
+from collections import defaultdict
+from datetime import datetime
+from time import gmtime
+from aiohttp import web
+from aiohttp.abc import AbstractAccessLogger
+from pprint import pprint, pformat
+from bidict import bidict
+from copy import deepcopy
+from traceback import print_exc
+import ipdb
+
+
+class GlobalState:
+    pass
+g = GlobalState()
+g.throw_on_errors = False
+g.msgcode_to_msgtype = {}
+g.code_to_field = {}
+g.header = None
+g.components_set = {}
+g.components = {}
+g.fields = {}
+g.fields_all = []
+g.msgtypes = {}
+g.msgtypes_all = []
+g.datatypes = {}
+g.datatypes_all = []
+g.glossary = {}
+g.glossary_all = []
+g.caps = {}
+g.caps_all = []
+g.component_in_msgtypes = defaultdict(set)
+g.component_in_components = defaultdict(set)
+g.field_in_msgtypes = defaultdict(set)
+g.field_in_components = defaultdict(set)
+g.data_last_mod_time = None
+
+L = logging.root
+
+
+def parse_description(fn):
+    with open(fn, "rb") as f:
+        data = f.read().decode()
+    lines = data.splitlines()
+    lines = [x for x in lines if not x.startswith("#")]
+    return "\n".join(lines)
+
+
+def surround_with_paragraph(x):
+    x = x.strip()
+    if not x.startswith("<p>"):
+        x = "<p>" + x + "</p>"
+    return x
+
+
+def add_data_to_fields(fields):
+    for d in fields:
+        d["required"] = d.get("required", False)
+        if d["name"] in g.components_set:
+            d["url"] = "components/{}".format(d["name"])
+            with open("data/components/{}.json".format(d["name"])) as f:
+                d2 = json.load(f)
+                if "comment" not in d:
+                    d["comment"] = d2.get("short_description", "")
+                d["comment"] = surround_with_paragraph(d["comment"])
+                d["fields"] = d2["fields"]
+                add_data_to_fields(d["fields"])
+        else:
+            d["url"] = "fields/{}".format(d["name"])
+            with open("data/fields/{}.json".format(d["name"])) as f:
+                d2 = json.load(f)
+                if "link" in d2:
+                    with open("data/fields/{}.json".format(d2["link"])) as f2:
+                        d2 = json.load(f2)
+                if "comment" not in d:
+                    d["comment"] = d2.get("short_description", "")
+                d["comment"] = surround_with_paragraph(d["comment"])
+                d["code"] = g.code_to_field.inv[d["name"]]
+                d["type"] = d2["type"]
+                fields2 = d2.get("fields")
+                if fields2:
+                    d["fields"] = fields2
+                    add_data_to_fields(fields2)
+
+
+def fetch_data(dir_name, key):
+    json_path = "data/{}/{}.json".format(dir_name, key)
+    with open(json_path) as f:
+        res = json.load(f)
+    if "link" in res:
+        return fetch_data(dir_name, res["link"])
+    description_path = "data/{}/descriptions/{}".format(dir_name, key)
+    try:
+        res["description"] = parse_description(description_path)
+    except FileNotFoundError:
+        res["description"] = ""
+    else:
+        res["description"] = surround_with_paragraph(res["description"])
+    return res
+
+
+def get_all_fields_and_components(fields):
+    res_fields = set()
+    res_components = set()
+    if not fields:
+        return set(), set()
+    for d in fields:
+        if d["name"] in g.components_set:
+            res_components.add(d["name"])
+            with open("data/components/{}.json".format(d["name"])) as f:
+                d2 = json.load(f)
+                fields2 = d2.get("fields")
+                rf, rc = get_all_fields_and_components(fields2)
+                res_fields = res_fields.union(rf)
+                res_components = res_components.union(rc)
+        else:
+            res_fields.add(d["name"])
+            with open("data/fields/{}.json".format(d["name"])) as f:
+                d2 = json.load(f)
+                fields2 = d2.get("fields")
+                rf, rc = get_all_fields_and_components(fields2)
+                res_fields = res_fields.union(rf)
+                res_components = res_components.union(rc)
+    return res_fields, res_components
+
+
+def gen_header_data():
+    with open("data/header/Header.json") as f:
+        res = json.load(f)
+    try:
+        with open("data/header/description", "rb") as f:
+            res["description"] = f.read().decode()
+    except FileNotFoundError:
+        res["description"] = ""
+    else:
+        res["description"] = surround_with_paragraph(res["description"])
+    if "fields" in res:
+        add_data_to_fields(res["fields"])
+    all_fields, all_comps = get_all_fields_and_components(res.get("fields"))
+    for name in all_fields:
+        g.field_in_msgtypes[name].add("Header")
+    for name in all_comps:
+        g.component_in_msgtypes[name].add("Header")
+    res["ac"] = res.get("ac", True)
+    res["md"] = res.get("md", True)
+    res["description"] = surround_with_paragraph(res["description"])
+    return json.dumps(res)
+
+
+
+def gen_msgtype_data(dir_name, key):
+    res = fetch_data(dir_name, key)
+    res["name"] = key
+    if "fields" in res:
+        add_data_to_fields(res["fields"])
+    all_fields, all_comps = get_all_fields_and_components(res.get("fields"))
+    for name in all_fields:
+        g.field_in_msgtypes[name].add(res["name"])
+    for name in all_comps:
+        g.component_in_msgtypes[name].add(res["name"])
+    res["ac"] = res.get("ac", False)
+    res["md"] = res.get("md", False)
+    res["code"] = g.msgcode_to_msgtype.inv[key]
+    res["description"] = surround_with_paragraph(res["description"])
+    res["short_description"] = surround_with_paragraph(
+            res.get("short_description", ""))
+    return json.dumps(res)
+
+
+def gen_field_data(dir_name, key):
+    res = fetch_data(dir_name, key)
+    res["name"] = key
+    if key == "MsgType":
+        res["values"] = {}
+        for k,v in res["values_raw"].items():
+            res["values"][k] = '<a href="msgtypes/{}">{}</a>'.format(v, v)
+        del res["values_raw"]
+    # if key == "ZMCaps":
+    #     res["values"] = {}
+    #     for cap in os.listdir("data/caps"):
+    #         res["values"][cap] = '<a href="caps/{}">{}</a>'.format(cap, cap)
+    if "values" in res:
+        for k, v in res["values"].items():
+            res["values"][k] = surround_with_paragraph(v)
+    if "fields" in res:
+        add_data_to_fields(res["fields"])
+    res["used_in_msgtypes"] = sorted(g.field_in_msgtypes[res["name"]])
+    res["used_in_components"] = sorted(g.field_in_components[res["name"]])
+    res["code"] = g.code_to_field.inv[key]
+    if not res.get("description"):
+        res["description"] = res.get("short_description", "")
+    res["description"] = surround_with_paragraph(res["description"])
+    res["short_description"] = surround_with_paragraph(
+            res.get("short_description", ""))
+    return json.dumps(res)
+
+
+def gen_component_data_preprocess(dir_name, key):
+    res = fetch_data(dir_name, key)
+    all_fields, all_comps = get_all_fields_and_components(res.get("fields"))
+    for name in all_fields:
+        g.field_in_components[name].add(key)
+    for name in all_comps:
+        g.component_in_components[name].add(key)
+
+
+def gen_component_data(dir_name, key):
+    res = fetch_data(dir_name, key)
+    res["name"] = key
+    add_data_to_fields(res["fields"])
+    res["used_in_msgtypes"] = sorted(g.component_in_msgtypes[res["name"]])
+    res["used_in_components"] = sorted(g.component_in_components[res["name"]])
+    if not res.get("description"):
+        res["description"] = res.get("short_description", "")
+    res["description"] = surround_with_paragraph(res["description"])
+    res["short_description"] = surround_with_paragraph(
+            res.get("short_description", ""))
+    return json.dumps(res)
+
+
+def gen_datatype_data(key):
+    description = parse_description("data/datatypes/{}".format(key))
+    res = {}
+    res["name"] = key
+    res["description"] = description
+    return json.dumps(res)
+
+
+def gen_cap_data(key):
+    description = parse_description("data/caps/{}".format(key))
+    res = {}
+    res["name"] = key
+    res["description"] = description
+    return json.dumps(res)
+
+
+def gen_glossary_data(key):
+    description = parse_description("data/glossary/{}".format(key))
+    res = {}
+    name = key
+    name = name.replace("_", " ")
+    name = name.replace("%2F", "/")
+    name = urllib.parse.unquote(name)
+    res["name"] = name
+    res["description"] = description
+    return json.dumps(res)
+
+
+def get_data_last_mod_time():
+    max_dt = datetime.min
+    for path, dirs, files in os.walk("data"):
+        for x in dirs + files:
+            fn = os.path.join(path, x)
+            max_dt = max(
+                    datetime.utcfromtimestamp(os.stat(fn).st_mtime), max_dt)
+    return max_dt
+
+
+def reload_data():
+
+    L.info("reloading data ...")
+
+    g.component_in_msgtypes.clear()
+    g.component_in_components.clear()
+    g.field_in_msgtypes.clear()
+    g.field_in_components.clear()
+
+    g.msgcode_to_msgtype = {}
+    L.info("loading msgcode_to_msgtype ...")
+    try:
+        with open("data/fields/MsgType.json") as f:
+            g.msgcode_to_msgtype = bidict(json.loads(f.read())["values_raw"])
+    except:
+        if g.throw_on_errors:
+            raise
+        else:
+            print_exc()
+    
+    g.code_to_field = {}
+    L.info("loading code_to_field ...")
+    try:
+        with open("data/dicts/FieldCodes.json") as f:
+            field_codes = json.loads(f.read())
+            field_codes = {int(k): v for k, v in field_codes.items()}
+            field_codes = bidict(field_codes)
+            g.code_to_field = field_codes
+    except:
+        if g.throw_on_errors:
+            raise
+        else:
+            print_exc()
+
+    L.info("loading components_set ...")
+    g.components_set = set()
+    for fn in os.listdir("data/components"):
+        if not fn.endswith(".json"):
+            continue
+        try:
+            with open("data/components/{}".format(fn)) as f:
+                key = fn[:-5]
+                g.components_set.add(key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    try:
+        g.header = gen_header_data()
+    except:
+        if g.throw_on_errors:
+            raise
+        else:
+            print_exc()
+    
+    g.msgtypes = {}
+    for fn in os.listdir("data/msgtypes"):
+        if not fn.endswith(".json"):
+            continue
+        dir_name = "msgtypes"
+        key = fn[:-5]
+        L.info("loading {}/{} ...".format(dir_name, key))
+        try:
+            g.msgtypes[key] = gen_msgtype_data(dir_name, key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.msgtypes_all = []
+    for k in sorted(g.msgtypes.keys()):
+        v = json.loads(g.msgtypes[k])
+        d = {}
+        d["name"] = k
+        d["description"] = v["short_description"]
+        d["code"] = g.msgcode_to_msgtype.inv[k]
+        d["md"] = v["md"]
+        d["ac"] = v["ac"]
+        g.msgtypes_all.append(d)
+    g.msgtypes_all = json.dumps(g.msgtypes_all)
+
+    for fn in os.listdir("data/components"):
+        if not fn.endswith(".json"):
+            continue
+        dir_name = "components"
+        key = fn[:-5]
+        L.info("preprocessing {}/{} ...".format(dir_name, key))
+        try:
+            gen_component_data_preprocess(dir_name, key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.components = {}
+    for fn in os.listdir("data/components"):
+        if not fn.endswith(".json"):
+            continue
+        dir_name = "components"
+        key = fn[:-5]
+        L.info("loading {}/{} ...".format(dir_name, key))
+        try:
+            g.components[key] = gen_component_data(dir_name, key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.fields = {}
+    for fn in os.listdir("data/fields"):
+        if not fn.endswith(".json"):
+            continue
+        dir_name = "fields"
+        key = fn[:-5]
+        L.info("loading {}/{} ...".format(dir_name, key))
+        try:
+            g.fields[key] = gen_field_data(dir_name, key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.fields_all = []
+    for k in sorted(g.fields.keys()):
+        v = json.loads(g.fields[k])
+        d = {}
+        d["name"] = k
+        d["description"] = v["short_description"]
+        d["code"] = g.code_to_field.inv[k]
+        d["type"] = v["type"]
+        g.fields_all.append(d)
+    g.fields_all = json.dumps(g.fields_all)
+
+    g.datatypes = {}
+    for fn in os.listdir("data/datatypes"):
+        key = fn
+        L.info("loading datatypes/{} ...".format(key))
+        try:
+            g.datatypes[key] = gen_datatype_data(key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.datatypes_all = []
+    for k in sorted(g.datatypes.keys()):
+        g.datatypes_all.append(json.loads(g.datatypes[k]))
+    g.datatypes_all = json.dumps(g.datatypes_all)
+
+    g.caps = {}
+    for fn in os.listdir("data/caps"):
+        key = fn
+        L.info("loading caps/{} ...".format(key))
+        try:
+            g.caps[key] = gen_cap_data(key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+
+    g.caps_all = []
+    for k in sorted(g.caps.keys()):
+        g.caps_all.append(json.loads(g.caps[k]))
+    g.caps_all = json.dumps(g.caps_all)
+
+    g.glossary = {}
+    for fn in os.listdir("data/glossary"):
+        key = fn
+        L.info("loading glossary/{} ...".format(key))
+        try:
+            g.glossary[key] = gen_glossary_data(key)
+        except:
+            if g.throw_on_errors:
+                raise
+            else:
+                print_exc()
+        # g.word_to_glossarykey[key.replace("_", " ")] = key
+
+    g.glossary_all = []
+    for k in sorted(g.glossary.keys()):
+        g.glossary_all.append(json.loads(g.glossary[k]))
+    g.glossary_all = json.dumps(g.glossary_all)
+
+    g.data_last_mod_time = get_data_last_mod_time().strftime(
+            "%Y-%m-%d %H:%M:%S UTC")
+
+
+class BaseResponse(web.Response):
+
+    
+    def __init__(self, *args, **kwargs):
+        kwargs = deepcopy(kwargs)
+        headers = {"Access-Control-Allow-Origin": "*"}
+        headers.update(kwargs.pop("headers", {}))
+        kwargs["headers"] = headers
+        super().__init__(*args, **kwargs)
+
+
+async def handle_header(request):
+    return BaseResponse(status=200, text=g.header)
+
+
+async def handle_msgtype(request):
+    res = g.msgtypes.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_msgtypes_all(request):
+    return BaseResponse(status=200, text=g.msgtypes_all)
+
+
+async def handle_component(request):
+    res = g.components.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_field(request):
+    res = g.fields.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+async def handle_fields_all(request):
+    return BaseResponse(status=200, text=g.fields_all)
+
+
+async def handle_datatype(request):
+    res = g.datatypes.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_cap(request):
+    res = g.caps.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_caps_all(request):
+    return BaseResponse(status=200, text=g.caps_all)
+
+
+async def handle_datatypes_all(request):
+    return BaseResponse(status=200, text=g.datatypes_all)
+
+
+async def handle_glossary(request):
+    res = g.glossary.get(request.match_info["key"])
+    if not res:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_glossary_all(request):
+    return BaseResponse(status=200, text=g.glossary_all)
+
+
+async def handle_collections(request):
+    key = request.match_info["key"]
+    if key == "msgcode_to_msgtype":
+        res = json.dumps(dict(g.msgcode_to_msgtype))
+    elif key == "code_to_field":
+        res = json.dumps(dict(g.code_to_field))
+    # elif key == "word_to_glossarykey":
+    #     res = json.dumps(g.word_to_glossarykey)
+    else:
+        return await handle_not_found(request)
+    return BaseResponse(status=200, text=res)
+
+
+async def handle_data_last_mod_time(request):
+    return BaseResponse(status=200, text=g.data_last_mod_time)
+    
+    
+async def handle_not_found(request):
+    return BaseResponse(status=404)
+
+
+def setup_logging(args):
+
+    class UpperCapFilter(logging.Filter):
+        """Filter used to pick only records that have levelno below cutofflevel."""
+        def __init__(self, cutofflevel):
+            self.cutofflevel = cutofflevel
+        def filter(self, record):
+            return record.levelno < self.cutofflevel
+
+    logger = logging.root
+    logger.setLevel(args.log_level)
+    logger.handlers.clear()
+    
+    if args.no_timestamps:
+        fmt = "[%(levelname)s] %(message)s"
+    else:
+        fmt = "%(asctime)s.%(msecs)03d [%(levelname)s] %(message)s"
+    datefmt = "%H:%M:%S"
+    formatter = logging.Formatter(fmt=fmt, datefmt=datefmt)
+    # convert datetime to utc
+    formatter.converter = gmtime
+
+    stdout = logging.StreamHandler(stream=sys.stdout)
+    stdout.name = "stdout"
+    stdout.addFilter(UpperCapFilter(logging.WARNING))
+    stdout.setFormatter(formatter)
+    logger.addHandler(stdout)
+
+    stderr = logging.StreamHandler(stream=sys.stderr)
+    stderr.name = "stderr"
+    stderr.level = logging.WARNING
+    stderr.setFormatter(formatter)
+    logger.addHandler(stderr)
+
+
+def handle_sighup(signum, frame):
+    L.info("received SIGHUP")
+    reload_data()
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="zmdoc content server")
+    parser.add_argument("--log-level", default="INFO", help="logging level")
+    parser.add_argument("--no-timestamps", action="store_true",
+                        help="do not show timestamps when logging")
+    parser.add_argument("--no-access-log", action="store_true",
+                        help="disable access log")
+    parser.add_argument("--port", type=int, default=8080,
+                        help="port number")
+    parser.add_argument("--debug", action="store_true",
+                        help="toggle debug mode")
+    args = parser.parse_args()
+    try:
+        args.log_level = int(args.log_level)
+    except ValueError:
+        pass
+    if args.debug:
+        g.throw_on_errors = True
+    return args
+
+
+def main():
+
+    args = parse_args()
+    setup_logging(args)
+
+    signal.signal(signal.SIGHUP, handle_sighup)
+
+    reload_data()
+
+    app = web.Application()
+    app.add_routes([
+        web.get("/header", handle_header),
+        web.get("/msgtypes/{key}", handle_msgtype),
+        web.get("/msgtypes", handle_msgtypes_all),
+        web.get("/components/{key}", handle_component),
+        web.get("/fields/{key}", handle_field),
+        web.get("/fields", handle_fields_all),
+        web.get("/datatypes/{key}", handle_datatype),
+        web.get("/datatypes", handle_datatypes_all),
+        web.get("/caps/{key}", handle_cap),
+        web.get("/caps", handle_caps_all),
+        web.get("/glossary", handle_glossary_all),
+        web.get("/glossary/{key}", handle_glossary),
+        web.get("/collections/{key}", handle_collections),
+        web.get("/data_last_mod_time", handle_data_last_mod_time),
+        web.get("/{url}", handle_not_found),
+    ])
+
+    aio_log_fmt = '%a "%r" %s %b "%{Referer}i" "%{User-Agent}i"'
+    if args.no_access_log:
+        web.run_app(app, access_log=None, port=args.port)
+    else:
+        web.run_app(app, access_log_format=aio_log_fmt, port=args.port)
+
+
+if __name__ == "__main__":
+    main()

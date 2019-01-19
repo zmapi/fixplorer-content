@@ -1,0 +1,9 @@
+{
+	"type": "int",
+	"short_description": "Indicates the option right.",
+	"values": {
+		"0": "Put - right to sell at strike price upon exercise",
+		"1": "Call - right to buy at strike price upon exercise",
+		"3": "Chooser - right to buy and sell at strike price upon exercise"
+	}
+}

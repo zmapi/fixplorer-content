@@ -1,0 +1,26 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "MDUpdateAction", "required": true},
+		{"name": "MDEntryType", "required": true},
+		{"name": "MDEntryPx"},
+		{"name": "MDEntrySize"},
+		{"name": "TransactTime"},
+		{"name": "TradingSessionID"},
+		{"name": "NoTradeConditions"},
+		{"name": "TimeInForce"},
+		{"name": "OrderID"},
+		{"name": "TradeID"},
+		{"name": "MDEntryBuyer"},
+		{"name": "MDEntrySeller"},
+		{"name": "NumberOfBuyOrders"},
+		{"name": "NumberOfSellOrders"},
+		{"name": "NumberOfOrders", "comment": "In an MBP order book, used to show how many individual orders make up an MDEntry."},
+		{"name": "MDEntryPositionNo"},
+		{"name": "MDPriceLevel"},
+		{"name": "TradeVolume"},
+		{"name": "AggressorSide"},
+		{"name": "ZMInstrumentID", "comment": "If provided on user-facing API then ZMTickerID is not required. Provided for convenience if performance is not critical. Not used in high performance modules."},
+		{"name": "ZMTickerID", "comment": "Required on <a href=\"glossary/connector_level_api\">connector level API</a>."}
+	]
+}

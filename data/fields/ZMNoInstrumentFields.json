@@ -1,0 +1,6 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "ZMRefFieldOrCompName", "required": true}
+	]
+}

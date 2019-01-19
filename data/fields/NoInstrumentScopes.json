@@ -1,0 +1,7 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "InstrumentScopeOperator", "required": true},
+		{"name": "InstrumentScope", "required": true}
+	]
+}

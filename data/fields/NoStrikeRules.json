@@ -1,0 +1,11 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "StrikeRuleID"},
+		{"name": "StartStrikePxRange", "required": true},
+		{"name": "EndStrikePxRange", "required": true},
+		{"name": "StrikeIncrement", "required": true},
+		{"name": "StrikeExerciseStyle"},
+		{"name": "MaturityRules"}
+	]
+}

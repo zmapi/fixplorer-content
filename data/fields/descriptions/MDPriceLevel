@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>Relative position of the price level of the MDEntry in <a href="glossary/mbp_order_book">MBP book</a>, from competitive to least competitive, per market side, beginning with 1.</p>

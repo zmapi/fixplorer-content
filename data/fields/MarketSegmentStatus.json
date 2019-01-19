@@ -1,0 +1,9 @@
+{
+	"type": "int",
+	"short_description": "Status of market segment.",
+	"values": {
+		"1": "Active<br>Market segment is active, i.e. trading is possible.",
+		"2": "Inactive<br>Market segment has previously been active and is now inactive.",
+		"3": "Published<br>Market segment information is provided prior to its firnt activation."
+	}
+}

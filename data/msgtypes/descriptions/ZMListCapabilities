@@ -1,0 +1,3 @@
+<p>ZMListCapabilities message is used to request list of ZMAPI capabilities provided by the module.</p>
+
+<p>Result will be returned in a <a href="msgtypes/ZMListCapabilitiesResponse">ZMListCapabilitiesResponse message</a>.</p>

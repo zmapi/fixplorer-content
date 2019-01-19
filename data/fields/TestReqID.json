@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "Identifier included in TestRequest message to be returned in the resulting Heartbeat message."
+}

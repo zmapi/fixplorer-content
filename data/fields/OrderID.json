@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "Unique indentifier for order as assigned by sell-side (i.e. broker, exchange or ECN)."
+}

@@ -1,0 +1,15 @@
+{
+	"type": "int",
+	"short_description": "Identifies an event related to a <a href=\"fields/SecurityTradingStatus\">SecurityTradingStatus</a>.",
+	"values": {
+		"1": "Order imbalance, auction is extended",
+		"2": "Trading resumes (after halt)",
+		"3": "Price volatility interruption",
+		"4": "Change of trading session",
+		"5": "Change of trading subsession",
+		"6": "Change of security trading status",
+		"7": "Change of book type",
+		"8": "Change of market depth",
+		"9": "Corporate action"
+	}
+}

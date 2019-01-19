@@ -1,0 +1,6 @@
+{
+	"short_description": "Specifies the <a href=\"glossary/lot_type\">lot types</a> that are valid for trading.",
+	"fields": [
+		{"name": "NoLotTypeRules", "required": true}
+	]
+}

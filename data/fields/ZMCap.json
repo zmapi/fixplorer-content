@@ -1,0 +1,14 @@
+
+{
+	"type": "int",
+	"short_description": "Specifies a <a href=\"glossary/capability\">ZMAPI capability</a>.",
+	"values": {
+		"0": "GetTickerFields",
+		"1": "ListDirectory",
+		"2": "ListEndpoints",
+		"3": "MDSubscribe",
+		"4": "PubOrderBookIncremental",
+		"5": "SyncMDSnapshot",
+		"6": "UnsyncMDSnapshot"
+	}
+}

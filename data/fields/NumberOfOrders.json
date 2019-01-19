@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "Number of orders that make up an entry."
+}

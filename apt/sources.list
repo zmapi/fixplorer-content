@@ -1,0 +1,3 @@
+deb http://mirror.0x.sg/ubuntu/ bionic main restricted universe
+deb http://mirror.0x.sg/ubuntu/ bionic-updates main restricted universe
+deb http://mirror.0x.sg/ubuntu/ bionic-security main restricted universe

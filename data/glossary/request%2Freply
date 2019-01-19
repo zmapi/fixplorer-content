@@ -1,0 +1,2 @@
+<p>Request/reply pattern is used when communicating with CTL socket of ZMAPI.
+One request message is always answered by exactly one response message.</p>

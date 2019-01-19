@@ -1,0 +1,8 @@
+{
+	"md": true,
+	"fields": [
+		{"name": "ZMSnapshots", "required": false},
+		{"name": "Text", "required": false}
+	],
+	"short_description": "Reply message to ZMMarketDataRequest request"
+}

@@ -1,0 +1,5 @@
+<p>The SecurityStatusRequest message provides for the ability to request the status of <a href="glossary/instrument">an instrument</a>.<p>
+
+<p><a href="msgtypes/ZMSecurityStatusRequestResponse">ZMSecurityStatusRequestResponse</a> message is returned as a response to SecurityStatusRequest message.</p>
+
+<p><a href="msgtypes/SecurityStatus">SecurityStatus</a> messages shall be emitted whenever status of the instrument is changed on any of the subscribed markets.</p>

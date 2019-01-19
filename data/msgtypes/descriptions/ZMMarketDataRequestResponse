@@ -1,0 +1,3 @@
+<p>ZMMarketDataRequestResponse is a response message to <a href="msgtypes/MarketDataRequest">MarketDataRequest message</a>.</p>
+
+<p>ZMMarketDataRequestResponse contains snapshot data if requested and the result of the request.</p>

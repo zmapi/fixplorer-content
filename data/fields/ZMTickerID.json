@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "<a href=\"glossary/instrument\">Instrument</a> identifier used by <a href=\"glossary/connector_level_api\">connector level API</a>."
+}

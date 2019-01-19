@@ -1,0 +1,3 @@
+<p>Market By Price (MBP) order book is aggregated order book format where individual orders are not visible. Orders at the same price are aggregated to a "price level".</p>
+
+<p>MBP books keep track of aggregated volume (MDEntrySize) on each price level (MDEntryPx) and the price level's relative positioning in the whole order book (MDPriceLevel). Some MBP books are tracking the number of orders in each level as well (NumberOfOrders).</p>

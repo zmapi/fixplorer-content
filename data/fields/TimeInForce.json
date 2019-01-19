@@ -1,0 +1,13 @@
+{
+	"type": "char",
+	"short_description": "Specifies how long the order remains in effect.",
+	"values": {
+		"0": "Day (or session)",
+		"1": "Good Till Cancel (GTC)",
+		"2": "At the Opening (OPG)",
+		"3": "Immediate Or Cancel (IOC)",
+		"4": "Fill Or Kill (FOK)",
+		"6": "Good Till Date (GTD)",
+		"7": "At the Close"
+	}
+}

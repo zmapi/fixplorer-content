@@ -1,0 +1,5 @@
+<p><a href="glossary/instrument">Instrument</a> identifier used by <a href="glossary/connector_level_api">connector level API</a>. This an integer identifier that matches a single <a href="fields/ZMInstrumentID">ZMInstrumentID</a>. Each ZMInstrumentID that has been requested by <a href="glossary/downstream">downstream</a> must have a matching ZMTickerID specified.</p>
+
+<p>Main purpose of ZMTickerID field is to provide fast processing of instrument identifiers with binary encoders. It can have some positive performance/bandwidth implications even on text-based encoding if long ZMInstrumentIDs are used.</p>
+
+<p>If user-facing middleware module is used that provides JSON encoding then it should automatically handle the translation between ZMInstrumentID and ZMTickerID so that the user don't need to worry about ZMTickerIDs. Only the users seeking to minimize latency will benefit from using raw ZMTickerIDs in their applications.</p>

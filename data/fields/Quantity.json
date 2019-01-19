@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Overall or total quantity (e.g. number of shares) of the order."
+}

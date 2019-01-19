@@ -1,0 +1,3 @@
+<p>The SecurityListRequest message is used to return a list of one or more <a href="glossary/instrument">instruments</a> that match the criteria provided on the request. Each matched instrument must have some basic information specified in the resulting <a href="msgtypes/SecurityList">SecurityList message</a>.</p>
+
+<p>Perioidical <a href="msgtypes/SecurityList">SecurityList</a> updates are sent whenever there are changes to the resulting group of the search request if subscription is defined via <a href="fields/SubscriptionRequestType">SubscriptionRequestType field</a>.</p>

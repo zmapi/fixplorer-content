@@ -1,0 +1,6 @@
+{
+	"short_description": "Used to specify the time in force rules that are valid for trading on the market segment.",
+	"fields": [
+		{"name": "NoTimeInForceRules", "required": true}
+	]
+}

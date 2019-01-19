@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>A capability is a standardized feature that a module may or may not have. Specifying what capabilities each module provides is essential so that the <a href="glossary/downstream">downstream</a> modules will be able to adjust their functionality accordingly.</p>

@@ -1,0 +1,9 @@
+{
+	"type": "str",
+	"short_description": "Condition describing a trade.",
+	"values": {
+		"AA": "Spread",
+		"AX": "Session high price",
+		"AY": "Session low price"
+	}
+}

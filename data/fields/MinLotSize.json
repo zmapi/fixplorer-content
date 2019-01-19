@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Lot size definition, used in conjunction with <a href=\"fields/LotType\">LotType</a>."
+}

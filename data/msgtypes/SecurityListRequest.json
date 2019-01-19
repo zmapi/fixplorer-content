@@ -1,0 +1,21 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "SecurityReqID", "comment": "Required if <a href=\"fields/SubscriptionRequestType\">SubscriptionRequestType</a> is '1' or '2'."},
+		{"name": "ZMInstrumentID", "comment": "If provided all the other criteria will be ignored and the selected <a href=\"glossary/instrument\">instrument</a> will be returned"},
+		{"name": "Symbol"},
+		{"name": "SecurityExchange"},
+		{"name": "SecurityID"},
+		{"name": "SecurityIDSource"},
+		{"name": "SecurityType"},
+		{"name": "SecuritySubType"},
+		{"name": "MaturityMonthYear"},
+		{"name": "PutOrCall"},
+		{"name": "StrikePrice"},
+		{"name": "ContractMultiplier"},
+		{"name": "InstrmtLegGrp"},
+		{"name": "SubscriptionRequestType", "comment": "Defaults to snapshot (0)"}
+	],
+	"short_description": "Request for querying available instruments or general information about selected instruments."
+}

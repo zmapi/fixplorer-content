@@ -1,0 +1,8 @@
+{
+	"type": "bool",
+	"short_description": "Indicates whether single sided quotes are allowed.",
+	"values": {
+		"true": "Single sided quotes are allowed.",
+		"false": "Single sided quotes are not allowed."
+	}
+}

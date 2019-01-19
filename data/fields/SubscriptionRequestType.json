@@ -1,0 +1,9 @@
+{
+	"type": "char",
+	"short_description": "Type of the subscription request.",
+	"values": {
+		"0": "Snapshot - <a href=\"glossary/unsychronized_snapshot\">unsynchronized_snapshot</a> is returned directly in the response message",
+		"1": "Snapshot + updates (subscribe) - <a href=\"glossary/synchronized_snapshot\">synchronized snapshot</a> and updates are emitted via PUB socket",
+		"2": "Disable previous snapshot + update request (unsubscribe)"
+	}
+}

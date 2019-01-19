@@ -1,0 +1,9 @@
+{
+	"type": "char",
+	"short_description": "Firm's or security's financial status.",
+	"values": {
+		"1": "Bankrupt",
+		"2": "Pending delisting",
+		"3": "Restricted"
+	}
+}

@@ -1,0 +1,4 @@
+{
+	"type": "bool",
+	"short_description": "Indicates if <a href=\"glossary/instrument\">instrument</a> is in <a href=\"glossary/fast_market\">fast market</a> state."
+}

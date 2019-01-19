@@ -1,0 +1,9 @@
+# vim: ft=plain
+
+<p>Lot is a quantity related to the sizing rules of the orders on a particular instrument on a particular market. Order size must be some positive integral multiple of the lot size. If "mixed lots" are allowed the order size can be constructed using the previously mentioned rule with any of the lot types and summing up the results.</p>
+
+<p>Certain <a href="glossary/market">markets</a> allow an instrument to be traded in multiple lot types, e.g. odd lot, round lot and block lot sizes. In cases where the various lot types are traded as separate books (no matching integration), separate price feeds or books could be defined. In markets where matching is integrated (a round lot order may for example trade with odd lots), price feeds will also be integrated.</p>
+
+<p>More rarely a marketplace will allow "mixed lots", i.e. that an order is allowed a size that is not an increment of the lot size. Say e.g. that the round lot is 100 — a user may then be allowed to enter an order for 145 (a mix of one round lot and 45 odd lots).</p>
+
+<p>In a market where matching is non-integrated a separate order book will be maintained for each lot type. The information about which order book is being emitted on a market data message is conveyed by <a href="fields/MDSubBookType">MDSubBookType field</a>.</p>

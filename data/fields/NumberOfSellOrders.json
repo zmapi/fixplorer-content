@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "Number of sell orders involved in a trade."
+}

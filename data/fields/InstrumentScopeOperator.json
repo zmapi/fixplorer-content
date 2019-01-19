@@ -1,0 +1,8 @@
+{
+	"type": "int",
+	"short_description": "Operator to perform on specified instrument(s).",
+	"values": {
+		"1": "Include",
+		"2": "Exclude"
+	}
+}

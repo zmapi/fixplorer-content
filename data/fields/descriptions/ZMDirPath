@@ -1,0 +1,7 @@
+<p>ZMDirPath is UNIX-like directory path to a resource. It is most notably used as a field in <a href="msgtypes/ZMListDirectory">ZMListDirectory request</a>.</p>
+
+<p>Examples:</p>
+<p>/path/to/resource</p>
+<p>/</p>
+<p>/CME</p>
+<p>/CME/GC/FUT/H2020</p>

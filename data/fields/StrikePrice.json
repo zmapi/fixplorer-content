@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Strike price for an option."
+}

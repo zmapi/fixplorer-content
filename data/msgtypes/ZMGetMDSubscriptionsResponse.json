@@ -1,0 +1,7 @@
+{
+	"md": true,
+	"fields": [
+		{"name": "ZMNoMDSubscriptions", "required": true}
+	],
+	"short_description": "Reply message to ZMGetMDSubscriptions request."
+}

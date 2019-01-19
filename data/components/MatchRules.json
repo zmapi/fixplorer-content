@@ -1,0 +1,6 @@
+{
+	"short_description": "Used to specify the matching rules of the market.",
+	"fields": [
+		{"name": "NoMatchRules", "required": true}
+	]
+}

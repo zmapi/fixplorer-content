@@ -1,0 +1,1 @@
+<p>Instrument directory is an abstract listing of either other instrument directories or instruments (by <a href="fields/ZMInstrumentID">ZMInstrumentID</a>). Instrument directory is part of an <a href="glossary/instrument_tree">instrument tree</a>.</p>

@@ -1,0 +1,6 @@
+{
+	"short_description": "Contains incremental updates to a market.",
+	"fields": [
+		{"name": "ZMNoMDIncEntries", "required": true}
+	]
+}

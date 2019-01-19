@@ -1,0 +1,3 @@
+<p>MarketDataIncrementalRefresh message is emitted by PUB socket whenever any market data related events occur in the market. It shows only what has been changed since the last update, as opposed to the full state of the market as in <a href="msgtypes/MarketDataSnapshotFullRefresh">MarketDataSnapshotFullRefresh</a> message.</p>
+
+<p>MarketDataIncrementalRefresh message may contain one or more updates for one or more <a href="glossary/instrument">instruments</a>, in a single <a href="glossary/market">market</a>.</p>

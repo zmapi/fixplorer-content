@@ -1,0 +1,8 @@
+{
+	"md": true,
+	"fields": [
+		{"name": "MarketID", "comment": "Specifies the market where these updates are coming from."},
+		{"name": "MDIncGrp", "required": true}
+	],
+	"short_description": "Incremental update to market data."
+}

@@ -1,0 +1,15 @@
+{
+	"type": "char",
+	"short_description": "Reason for the rejection of market data request.",
+	"values": {
+		"0": "Unknown symbol",
+		"3": "Insufficient permissions",
+		"4": "Unsupported <a href=\"fields/SubscriptionRequestType\">SubscriptionRequestType</a>",
+		"5": "Unsupported <a href=\"fields/MarketDepth\">MarketDepth</a>",
+		"6": "Unsupported <a href=\"fields/MDUpdateType\">MDUpdateType</a>",
+		"7": "Unsupported <a href=\"fields/AggregatedBook\">AggregatedBook</a>",
+		"8": "Unsupported <a href=\"fields/MDEntryType\">MDEntryType</a>",
+		"D": "Insufficient credit",
+		"z": "ZMGenericError"
+	}
+}

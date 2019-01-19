@@ -1,0 +1,9 @@
+{
+	"type": "int",
+	"short_description": "Format used to generate the <a href=\"fields/MaturityMonthYear\">MaturityMonthYear</a> for each option.",
+	"values": {
+		"0": "YearMonth (default)",
+		"1": "YearMonthDay",
+		"2": "YearMonthWeek"
+	}
+}

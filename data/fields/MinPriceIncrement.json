@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Minimum price increment of an instrument. Also known as tick size."
+}

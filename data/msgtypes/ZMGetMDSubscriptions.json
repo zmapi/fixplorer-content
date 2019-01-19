@@ -1,0 +1,5 @@
+{
+	"md": true,
+	"fields": [],
+	"short_description": "Request message for getting all active market data subscriptions."
+}

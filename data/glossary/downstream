@@ -1,0 +1,1 @@
+<p>Downstream is a direction in the context of a <a href="glossary/module_tree">module tree</a>. Furthest downstream of the module tree is the module that provides the greatest abstraction and standardization to the client, an API endpoint where the clients connect. Downstream is the opposite of <a href="glossary/upstream">upstream</a> direction.</p>

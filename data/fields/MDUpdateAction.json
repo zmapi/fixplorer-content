@@ -1,0 +1,10 @@
+{
+	"type": "char",
+	"short_description": "Type of the market data update.",
+	"values": {
+		"0": "New",
+		"1": "Change",
+		"2": "Delete",
+		"5": "Overlay (only used in connector level standard)"
+	}
+}

@@ -1,0 +1,3 @@
+<p>Unsynchronized snapshots are emitted in a <a href="msgtypes/ZMMarketDataRequestResponse">ZMMarketDataRequestResponse</a> message, as a response to a <a href="msgtypes/MarketDataRequest">MarketDataRequest</a> message with <a href="fields/SubscriptionRequestType">SubscriptionRequestType</a> set to "0".</p>
+
+<p>As expected, unsynchronized snapshots cannot be synchronized to data stream emitted by PUB and are only suitable for getting one shot snapshot update of a market using <a href="glossary/request%2Freply">request/reply pattern</a>.</p>

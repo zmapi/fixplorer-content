@@ -1,0 +1,6 @@
+{
+	"short_description": "MarketSegmentGrp",
+	"fields": [
+		{"name": "NoMarketSegments", "required": true}
+	]
+}

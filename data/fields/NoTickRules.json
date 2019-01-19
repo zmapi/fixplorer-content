@@ -1,0 +1,8 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "StartTickPriceRange", "required": true},
+		{"name": "EndTickPriceRange"},
+		{"name": "TickIncrement"}
+	]
+}

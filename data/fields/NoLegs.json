@@ -1,0 +1,6 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "InstrumentLeg", "required": true}
+	]
+}

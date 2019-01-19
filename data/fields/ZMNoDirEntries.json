@@ -1,0 +1,8 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "ZMNodeName", "required": true},
+		{"name": "Text", "comment": "Description of the node."},
+		{"name": "ZMInstrumentID", "comment": "Only if the node is an instrument."}
+	]
+}

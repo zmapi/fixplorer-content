@@ -1,0 +1,6 @@
+{
+	"short_description": "Used to specify the order types that are valid for trading on the market segment.",
+	"fields": [
+		{"name": "NoOrdTypeRules", "required": true}
+	]
+}

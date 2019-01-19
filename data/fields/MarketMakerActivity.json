@@ -1,0 +1,10 @@
+{
+	"type": "int",
+	"short_description": "Indicates market maker participation.",
+	"values": {
+		"0": "No participation",
+		"1": "Buy participation",
+		"2": "Sell participation",
+		"3": "Both buy and sell participation"
+	}
+}

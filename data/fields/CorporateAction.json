@@ -1,0 +1,29 @@
+{
+	"type": "char",
+	"short_description": "Type of a corporate action.",
+	"values": {
+		"A": "Ex-dividend",
+		"B": "Ex-distribution",
+		"C": "Ex-rights",
+		"D": "New",
+		"E": "Ex-interest",
+		"F": "Cash dividend",
+		"G": "Stock dividend",
+		"H": "Non-integer stock split",
+		"I": "Reverse stock split",
+		"J": "Standard-integer stock split",
+		"K": "Position consolidation",
+		"L": "Liquidation reorganization",
+		"M": "Merger reorganization",
+		"N": "Rights offering",
+		"O": "Shareholder meeting",
+		"P": "Spinoff",
+		"Q": "Tender offer",
+		"R": "Warrant",
+		"S": "Special action",
+		"T": "Symbol conversion",
+		"U": "CUSIP / name change",
+		"V": "Leap rollover",
+		"W": "Succession event"
+	}
+}

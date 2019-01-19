@@ -1,0 +1,1 @@
+<p>Upstream is a direction in the context of a <a href="glossary/module_tree">module tree</a>. Furthest upstream of the module tree are <a href="glossary/connector">connectors</a> and <a href="glossary/simulated_connector">simulated connectors</a>. Upstream is the opposite of <a href="glossary/downstream">downstream</a> direction.</p>

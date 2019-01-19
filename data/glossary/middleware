@@ -1,0 +1,5 @@
+<p>Middleware components are components of the <a href="glossary/module_tree">module tree</a> that are located in the branches of the tree. Middleware components are connected to the endpoints (leaves of the tree) and can form networks and chains. End-user is always connected to middleware component instead of an endpoint directly.</p>
+
+<p>Middleware components provide standardization from <a href="glossary/connector_level_api">connector level API</a> to <a href="glossary/full_api">full API</a>. Middleware components can also combine many module chains or <a href="glossary/subtree">subtrees</a> to a single module, effectively forming a branch in the module tree.</a>
+
+<p>TODO: add link to middleware listing</p>

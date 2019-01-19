@@ -1,0 +1,9 @@
+{
+	"type": "char",
+	"short_description": "Defines the lot type assigned to the order.",
+	"values": {
+		"1": "Odd lot",
+		"2": "Round lot",
+		"3": "Block lot"
+	}
+}

@@ -1,0 +1,5 @@
+# vim: ft=plain
+
+<p>Security group of an instrument. Groups instruments with another related instruments. For example index and it's derivatives such as futures and options on futures can have the same security group.</p>
+
+<p>For example S&P500 future on CME that expires on December 2019 has Symbol "ESZ19" and SecurityGroup "ES".</p>

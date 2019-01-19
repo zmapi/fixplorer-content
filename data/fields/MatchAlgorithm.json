@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "The type of algorithm used to match orders."
+}

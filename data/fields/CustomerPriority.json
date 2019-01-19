@@ -1,0 +1,8 @@
+{
+	"type": "int",
+	"short_description": "Specifies the kind of priority given to customers.",
+	"values": {
+		"0": "No priority",
+		"1": "Unconditional priority"
+	}
+}

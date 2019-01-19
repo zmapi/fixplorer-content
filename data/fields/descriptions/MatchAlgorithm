@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>The type of algorithm used to match orders. The possible values include FIFO, Allocation, Pro-rata, Lead Market maker and Currency Calendar.</p>

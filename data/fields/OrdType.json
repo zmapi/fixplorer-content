@@ -1,0 +1,15 @@
+{
+	"type": "char",
+	"short_description": "Order type.",
+	"values": {
+		"1": "Market",
+		"2": "Limit",
+		"3": "Stop / Stop Loss",
+		"4": "Stop Limit",
+		"I": "Funari",
+		"J": "Market If Touched",
+		"P": "Pegged",
+		"R": "Stop On Bid or Offer",
+		"S": "Stop Limit on Bid or Offer"
+	}
+}

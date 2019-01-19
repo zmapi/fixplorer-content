@@ -1,0 +1,21 @@
+{
+	"short_description": "Basic information about an instrument.",
+	"fields": [
+		{"name": "ZMInstrumentID", "required": true},
+		{"name": "Symbol"},
+		{"name": "SecurityDesc"},
+		{"name": "SecurityExchange"},
+		{"name": "SecurityID"},
+		{"name": "SecurityIDSource"},
+		{"name": "SecurityType"},
+		{"name": "SecuritySubType"},
+		{"name": "MaturityMonthYear"},
+		{"name": "PutOrCall"},
+		{"name": "StrikePrice"},
+		{"name": "ContractMultiplier"},
+		{"name": "MinPriceIncrement"},
+		{"name": "MinPriceIncrementAmount"},
+		{"name": "InstrmtLegGrp"},
+		{"name": "UndInstrmtGrp"}
+	]
+}

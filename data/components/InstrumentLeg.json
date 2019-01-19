@@ -1,0 +1,8 @@
+{
+	"short_description": "Leg of a multi-legged <a href=\"glossary/instrument\">instrument</a>.",
+	"fields": [
+		{"name": "ZMLegInstrumentID", "required": true},
+		{"name": "Quantity", "required": true},
+		{"name": "Side", "required": true}
+	]
+}

@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>Identifies currency used for price. Absence of this field is interpreted as the default for the intrument.</p>

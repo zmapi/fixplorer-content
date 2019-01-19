@@ -1,0 +1,3 @@
+<p>Simulated connectors are located as leaves of the <a href="glossary/module_tree">module tree</a>. Simulated connectors work just like connectors but instead of providing a bridge between third-party API and ZMAPI, they are used to combine connectors together. This may be useful when multiple <a href="glossary/market">markets</a> are combined for single <a href="glossary/instrument">instrument</a>.</p>
+
+<p>For example each cryptocurrency exchange has their own API and there is a ZMAPI connector written for each of those. All of the exchanges have BTC/USD instrument listed. It may be sensible to connect all of those exchanges into one simulated connector that will provide all of these markets in a single single instrument.</p>

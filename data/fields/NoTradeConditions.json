@@ -1,0 +1,6 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "TradeCondition", "required": true}
+	]
+}

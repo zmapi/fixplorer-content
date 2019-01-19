@@ -1,0 +1,3 @@
+<p>ZMGetSubscriptions is used to request all the subscriptions on a selected <a href="glossary/connector">connector</a>.</p>
+
+<p>Subscription information is returned on a <a href="msgtypes/ZMGetMDSubscriptionsResponse">ZMGetMDSubscriptionsResponse message</a>.</p>

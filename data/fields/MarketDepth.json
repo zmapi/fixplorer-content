@@ -1,0 +1,9 @@
+{
+	"type": "int",
+	"short_description": "Depth of market for order book snapshot or subscription.",
+	"values": {
+		"0": "Full book",
+		"1": "Top of the book (BBO)",
+		">=2": "Book depth (number of levels)"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"ac": true,
+	"md": true,
+	"fields":	[
+		{"name": "ZMInstrumentID", "required": true},
+		{"name": "MarketSegmentScopeGrp", "required": false},
+		{"name": "SubscriptionRequestType", "required": true}
+	],
+	"short_description": "Request for getting status of an instrument."
+}

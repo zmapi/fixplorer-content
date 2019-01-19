@@ -1,0 +1,23 @@
+{
+	"type": "char",
+	"short_description": "Type of market data entry.",
+	"values": {
+		"*": "All",
+		"0": "Bid",
+		"1": "Offer",
+		"2": "Trade",
+		"3": "Index value",
+		"4": "Opening price",
+		"5": "Closing price",
+		"6": "Settlement price",
+		"7": "Trading session high price",
+		"8": "Trading Session low price",
+		"9": "Trading session VWAP price",
+		"B": "Trading session trade volume",
+		"C": "Open interest",
+		"E": "Simulated sell price (implied bid)",
+		"F": "Simulated buy price (implied offer)",
+		"N": "Session high bid",
+		"O": "Session low offer"
+	}
+}

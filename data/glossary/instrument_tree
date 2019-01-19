@@ -1,0 +1,18 @@
+<p>Instrument tree is a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree-like data structure</a>. It contains all or part of the instruments of a <a href="glossary/connector">connector</a>. Instrument tree is analogous to unix directory tree and it is browsed in a similar fashion. Branches of the tree are directories and leaves of the tree are files. In instrument tree files are instruments.</p>
+
+<p>A connector is not required to have instrument tree in case it cannot be naturally formed.</p>
+
+<p>Example:</p>
+
+<font face="monospace">
+/<br/>
+├──&nbsp;CME<br/>
+│&nbsp;&nbsp;&nbsp;├─ ES<br/>
+│&nbsp;&nbsp;&nbsp;└─ YM<br/>
+├──&nbsp;NYMEX<br/>
+│&nbsp;&nbsp;&nbsp;├─ CL<br/>
+│&nbsp;&nbsp;&nbsp;└─ HO<br/>
+└──&nbsp;COMEX<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;├─ SI<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;└─ GC<br/>
+</font>

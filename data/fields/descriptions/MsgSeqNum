@@ -1,0 +1,3 @@
+<p>Message sequence number. Used for PUB messages only.</p>
+
+<p>MsgSeqNum is incremented by one on each message. It is used by downstream to recognize when messages are being dropped.</p>

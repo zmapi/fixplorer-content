@@ -1,0 +1,3 @@
+<p>ZMGetInstrumentFields is used to query what kind of fields are available for a <a href="msgtypes/SecurityListRequest">SecurityListRequest</a>.</p>
+
+<p>Result will be returned in a <a href="msgtypes/ZMGetInstrumentFieldsResponse">ZMGetInstrumentFieldsResponse message</a>.</p>

@@ -1,0 +1,6 @@
+{
+	"short_description": "Specifies the rules for strike price formation.",
+	"fields": [
+		{"name": "NoStrikeRules", "required": true}
+	]
+}

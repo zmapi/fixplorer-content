@@ -1,0 +1,18 @@
+{
+	"type": "str",
+	"short_description": "Indicates type of <a href=\"glossary/instrument\">instrument</a>.",
+	"values": {
+		"CORP": "Corporate bond",
+		"CB": "Convertible bond",
+		"FXSPOT": "FX spot",
+		"CDS": "Credit default swap",
+		"FUT": "Future",
+		"FWD": "Derivativa forward",
+		"IRS": "Interest rate swap",
+		"OOF": "Options on futures",
+		"OPT": "Option",
+		"SPREADBET": "Spread betting",
+		"CS": "Common stock",
+		"PS": "Preferred stock"
+	}
+}

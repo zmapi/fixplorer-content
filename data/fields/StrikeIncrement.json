@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Value by which strike price should be incremented within the specified price range."
+}

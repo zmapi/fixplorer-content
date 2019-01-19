@@ -1,0 +1,10 @@
+{
+	"short_description": "Contains information about a <a href=\"msgtypes/MarketDataRequest\">MarketDataRequest</a> subscription.",
+	"fields": [
+		{"name": "ZMInstrumentID", "required": true},
+		{"name": "MarketDepth", "required": true},
+		{"name": "AggregatedBook"},
+		{"name": "MDReqGrp"},
+		{"name": "MarketSegmentScopeGrp"}
+	]
+}

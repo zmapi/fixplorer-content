@@ -1,0 +1,3 @@
+<p>ZMListCapabilitiesResponse message is emitted as a reply message to <a href="msgtypes/ZMListCapabilities">ZMListCapabilities message</a>.</p>
+
+<p>ZMListCapabilitiesResponse message contains all the capabilities provided by the module. These capabilities are used for the user to know what are the capabilities of the module or for the middleware module to know how to handle this module module and what capabilities need to be simulated.</p>

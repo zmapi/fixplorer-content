@@ -1,0 +1,3 @@
+<p>ZMListEndpoints is a request to list all the available <a href="glossary/endpoint">endpoints</a>.</p>
+
+<p>The result is returned in a <a href="msgtypes/ZMListEndpointsResponse">ZMListEndpointsResponse message</a>.</p>

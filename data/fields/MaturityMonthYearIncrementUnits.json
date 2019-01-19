@@ -1,0 +1,10 @@
+{
+	"type": "int",
+	"short_description": "Unit of measure for <a href=\"fields/MaturityMonthYearIncrement\">MaturityMonthYearIncrement</a>.",
+	"values": {
+		"0": "Months",
+		"1": "Days",
+		"2": "Weeks",
+		"3": "Years"
+	}
+}

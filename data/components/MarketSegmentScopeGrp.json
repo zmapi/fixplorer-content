@@ -1,0 +1,6 @@
+{
+	"short_description": "List of markets to specify. If no markets are specified then all available markets are specified by default.",
+	"fields": [
+		{"name": "NoMarketSegments", "required": true}
+	]
+}

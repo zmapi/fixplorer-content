@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>Allowable high limit price for the trading day. A key parameter in validating order price. Used as the upper band for validating order prices. Orders submitted with prices above the upper limit will be rejected.</p>

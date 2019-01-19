@@ -1,0 +1,7 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "LotType", "required": true},
+		{"name": "MinLotSize", "required": true}
+	]
+}

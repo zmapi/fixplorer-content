@@ -1,0 +1,11 @@
+{
+	"md": true,
+	"fields": [
+		{"name": "MarketDepth", "required": true},
+		{"name": "AggregatedBook", "required": false},
+		{"name": "MDFullGrp", "required": true},
+		{"name": "ZMInstrumentID", "comment": "Required on <a href=\"glossary/full_api\">full API</a>"},
+		{"name": "ZMTickerID", "comment": "Required on <a href=\"glossary/connector_level_api\">connector level API</a>."}
+	],
+	"short_description": "Market data snapshot update."
+}

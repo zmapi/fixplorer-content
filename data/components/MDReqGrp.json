@@ -1,0 +1,6 @@
+{
+	"short_description": "Requested market data types.",
+	"fields": [
+		{"name": "NoMDEntryTypes", "required": true}
+	]
+}

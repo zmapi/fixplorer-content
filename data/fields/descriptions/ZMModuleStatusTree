@@ -1,0 +1,29 @@
+Contains an recursive free-form JSON that contains the status of the <a href="glossary/upstream">upstream</a> part of the tree.</p>
+
+<p>The resulting tree is formed as a recursive list where each branching point is a list of lists. Each item in the list that is not a branching point is an object containing status of a module. If module branches it will be followed by a branching point item. Branching point item is always logically the last item of the list unless we reach an endpoint.</p>
+
+<p>TODO: show examples</p>
+
+<p>Fields for each module:</p>
+<p><table>
+	<tr>
+		<th>Field name</th>
+		<th>Required?</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>module_name</td>
+		<td>Y</td>
+		<td>Name of the ZMAPI module.</td>
+	</tr>
+	<tr>
+		<td>endpoint_name</td>
+		<td></td>
+		<td>Name of the endpoint, required for connectors and pseudo-connectors.</td>
+	</tr>
+	<tr>
+		<td>session_id</td>
+		<td>Y</td>
+		<td>Unique identifier of the current session. Used to detect when module is restarted.</td>
+	</tr>
+</table></p>

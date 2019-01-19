@@ -1,0 +1,1 @@
+<p>MarketDataRequestReject is returned when <a href="msgtypes/MarketDataRequest">MarketDataRequest</a> is rejected. MarketDataRequestReject should contain explanation about why the request was rejected.</p>

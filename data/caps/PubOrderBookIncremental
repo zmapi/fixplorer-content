@@ -1,0 +1,1 @@
+<p>PubOrderBookIncremental capability is provided when the module supports incremental order book updates instead of snapshots only. PubOrderBookIncremental is not required by <a href="glossary/connector_level_api">connector level API</a>. Incremental order book can be simulated by mdcache middleware module.</p>

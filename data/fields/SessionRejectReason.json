@@ -1,0 +1,14 @@
+{
+	"type": "int",
+	"short_description": "Code to identify reason for a session-level <a href=\"msgtypes/Reject\">Reject message</a>.",
+	"values": {
+		"1": "Required tag missing",
+		"2": "Tag not defined for this message type",
+		"3": "Undefined tag",
+		"4": "Tag specified without value",
+		"5": "Value is incorrect (out of range) for this tag",
+		"6": "Incorrect data format for value",
+		"11": "Invalid <a href=\"fields/MsgType\">MsgType</a></p>",
+		"99": "Other"
+	}
+}

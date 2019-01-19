@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "Describes a class of sub book, e.g. for the separation of various <a href=\"glossary/lot_type\">lot types</a>. The MDSubBookType indicates that the  market data entry belong to a non-integrated sub book."
+}

@@ -1,0 +1,9 @@
+{
+	"short_description": "Definitions of the base trading rules.",
+	"fields": [
+		{"name": "TickRules"},
+		{"name": "LotTypeRules"},
+		{"name": "PriceLimits"},
+		{"name": "QuoteSideIndicator"}
+	]
+}

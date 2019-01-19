@@ -1,0 +1,6 @@
+{
+	"short_description": "List of directory entries.",
+	"fields": [
+		{"name": "ZMNoDirEntries", "required": true}
+	]
+}

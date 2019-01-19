@@ -1,0 +1,6 @@
+{
+	"short_description": "Used to specify the types of instruments that belong to the market segment.",
+	"fields": [
+		{"name": "NoInstrumentScopes", "required": true}
+	]
+}

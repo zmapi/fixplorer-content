@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "<a href=\"glossary/instrument\">Instrument</a> identifier. This must be unique for each connector."
+}

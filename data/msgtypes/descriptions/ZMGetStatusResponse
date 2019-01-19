@@ -1,0 +1,1 @@
+<p>ZMGetStatusResponse is a response message to <a href="msgtypes/ZMGetStatus">ZMGetStatus request</a>. It has a RawData field ZMModuleStatusTree that contains  recursive free-form JSON that contains the status of the <a href="glossary/upstream">upstream</a> part of the tree.</p>

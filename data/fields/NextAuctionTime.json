@@ -1,0 +1,4 @@
+{
+	"type": "Timestamp",
+	"short_description": "The timestamp of the next auction."
+}

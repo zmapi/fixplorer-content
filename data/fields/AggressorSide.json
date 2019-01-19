@@ -1,0 +1,14 @@
+{
+	"type": "char",
+	"short_description": "Side of the aggressive order resulting in a trade.",
+	"values": {
+		"1": "Buy",
+		"2": "Sell",
+		"5": "Sell short",
+		"6": "Sell short exempt",
+		"7": "Undisclosed (default value)",
+		"8": "Cross",
+		"9": "Cross short",
+		"A": "Cross short exempt"
+	}
+}

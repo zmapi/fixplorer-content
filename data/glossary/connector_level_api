@@ -1,0 +1,3 @@
+<p>Connector level API specification. All the connector modules shall follow this standard. Connectors are not required to implement the <a href="glossary/full_api">full ZMAPI specifications</a>. The missing functionality is automatically provided by the standard <a href="glossary/middleware">middleware components</a>.</p>
+
+<p>TODO: add link to page describing comprehensively the differences between full api and connector level api</p>

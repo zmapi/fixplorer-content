@@ -1,0 +1,8 @@
+{
+	"md": true,
+	"ac": true,
+	"fields": [
+		{"name": "ZMDirPath", "comment": "Directory path, defaults to \"/\"."}
+	],
+	"short_description": "Request to list instrument directory."
+}

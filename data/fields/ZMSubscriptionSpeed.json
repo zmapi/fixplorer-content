@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "Speed of the updates on a subscription. Must be an integer in range [1, 10]."
+}

@@ -1,0 +1,22 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "MDEntryType", "required": true},
+		{"name": "MDEntryPx"},
+		{"name": "MDEntrySize"},
+		{"name": "TradingSessionID"},
+		{"name": "NoTradeConditions"},
+		{"name": "TimeInForce"},
+		{"name": "OrderID"},
+		{"name": "TradeID"},
+		{"name": "MDEntryBuyer"},
+		{"name": "MDEntrySeller"},
+		{"name": "NumberOfBuyOrders"},
+		{"name": "NumberOfSellOrders"},
+		{"name": "NumberOfOrders", "comment": "In an MBP order book, used to show how many individual orders make up an MDEntry."},
+		{"name": "MDEntryPositionNo"},
+		{"name": "MDPriceLevel"},
+		{"name": "TradeVolume"},
+		{"name": "AggressorSide"}
+	]
+}

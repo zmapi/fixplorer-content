@@ -1,0 +1,4 @@
+<p>MDSubscribe capability is provided when the module support subscription on
+<a href="msgtypes/MarketDataRequest">MarketDataRequest request</a>.</p>
+
+<p>MDSubscribe is not required in <a href="glossary/connector_level_api">connector level API</a> and will be simulated by snap2sub middleware module if necessary.</p>

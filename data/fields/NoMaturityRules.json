@@ -1,0 +1,11 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "MaturityRuleID"},
+		{"name": "MaturityMonthYearFormat"},
+		{"name": "MaturityMonthYearIncrementUnits", "required": true},
+		{"name": "StartMaturityMonthYear", "required": true},
+		{"name": "EndMaturityMonthYear", "required": true},
+		{"name": "MaturityMonthYearIncrement", "required": true}
+	]
+}

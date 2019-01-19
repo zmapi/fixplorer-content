@@ -1,0 +1,6 @@
+{
+	"short_description": "Leg definitions for a multilegged <a href=\"glossary/instrument\">instrument</a>.",
+	"fields": [
+		{"name": "NoLegs", "required": true}
+	]
+}

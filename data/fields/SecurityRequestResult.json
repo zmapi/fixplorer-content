@@ -1,0 +1,11 @@
+{
+	"type": "int",
+	"short_description": "Result of a security list request.",
+	"values": {
+		"0": "Valid request",
+		"1": "Invalid or unsupported request",
+		"2": "No instruments found",
+		"3": "Not authorized to retrieve instrument data",
+		"4": "Instrument data temporarily unavailable"
+	}
+}

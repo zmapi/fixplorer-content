@@ -1,0 +1,1 @@
+<p>The TestRequest message forces a <a href="msgtypes/Heartbeat">Heartbeat message</a> from upstream. The TestRequest message is used to verifies communication line status.</a>

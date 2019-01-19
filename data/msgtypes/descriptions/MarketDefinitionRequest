@@ -1,0 +1,5 @@
+# vim: ft=plain
+
+<p>MarketDefinitionRequest message is a request for market structure information. The request can be for a single <a href="glossary/market_segment">market segment</a> or alternatively a snapshot information for multiple market segments can be requested.</p>
+
+<p>A successful MarketDefinitionRequest returns a <a href="msgtypes/MarketDefinition">MarketDefinition</a> message that contains the snapshot information. In addition MarketDefinition messages will be posted to PUB if a subscription is requested.</p>

@@ -1,0 +1,8 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "TestReqID", "required": true}
+	],
+	"short_description": "Request for testing link integrity."
+}

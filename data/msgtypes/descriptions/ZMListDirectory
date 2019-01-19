@@ -1,0 +1,3 @@
+<p>ZMListDirectory is a request for browsing contents of an <a href="glossary/instrument_tree">instrument tree</a>.</p>
+
+<p>The result is returned in a <a href="msgtypes/ZMListDirectoryResponse">ZMListDirectoryResponse message</a>.</p>

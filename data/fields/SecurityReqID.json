@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "Identity of the security request. Used to identify subscriptions."
+}

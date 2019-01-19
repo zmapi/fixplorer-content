@@ -1,0 +1,5 @@
+# vim: ft=plain
+
+<p>Depth of market for order book snapshot or subscription.</p>
+
+<p>This defines how many levels of bids and offers are requested. This field only has effect if bid, offer, simulated sell price or simulated buy price MDEntryTypes are requested.</p>

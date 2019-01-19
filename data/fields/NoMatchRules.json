@@ -1,0 +1,7 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "MatchAlgorithm", "required": true},
+		{"name": "CustomerPriority"}
+	]
+}

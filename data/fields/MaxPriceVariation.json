@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "The maximum price variation of an execution from one trading event to the next one for a given instrument."
+}

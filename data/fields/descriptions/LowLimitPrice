@@ -1,0 +1,3 @@
+# vim: ft=plain
+
+<p>Allowable low limit price for the trading day. A key parameter in validating order price. Used as the lower band for validating order prices. Orders submitted with prices below the lower limit will be rejected.</p>

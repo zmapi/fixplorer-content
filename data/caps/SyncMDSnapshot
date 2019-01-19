@@ -1,0 +1,5 @@
+# vim: ft=plain
+
+<p>SyncMDSnapshot capability is provided when the module supports getting synchronized market data snapshots via <a href="msgtypes/MarketDataRequest">MarketDataRequest</a> (<a href="fields/SubscriptionRequestType">SubscriptionRequestType</a> set to '1'). Synchronized snapshots must be synchronized with the rest of the PUB data feed and emitted via PUB socket as a <a href="msgtypes/MarketDataSnapshotsFullRefresh">MarketDataSnapshotsFullRefresh message</a>.</p>
+
+<p>SyncMDSnapshot is not required by <a href="glossary/connector_level_api">connector level api</a> and will be simulated by mdcache middleware module if necessary, that the <a href="caps/MDSubscribe">MDSubsribe capability</a> is provided.</p>

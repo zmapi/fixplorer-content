@@ -1,0 +1,10 @@
+{
+	"short_description": "Specifies some characteristics of an instrument.",
+	"fields": [
+		{"name": "InstrumentScopeSymbol"},
+		{"name": "InstrumentScopeSecurityGroup"},
+		{"name": "InstrumentScopeSecurityType"},
+		{"name": "InstrumentScopeSecuritySubType"},
+		{"name": "InstrumentScopeMaturityMonthYear"}
+	]
+}

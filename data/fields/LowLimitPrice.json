@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Allowable low limit price for the trading day."
+}

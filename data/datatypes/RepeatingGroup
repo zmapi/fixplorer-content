@@ -1,0 +1,1 @@
+Repeating group of fields or components. Specifies how many items (groups) there are in the list. Implemented as a list in JSON encoding.

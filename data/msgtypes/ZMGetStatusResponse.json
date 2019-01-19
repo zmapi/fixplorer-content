@@ -1,0 +1,8 @@
+{
+	"md": true,
+	"ac": true,
+	"fields": [
+		{"name": "ZMModuleStatusTree", "required": true}
+	],
+	"short_description": "Reply message to ZMGetStatus request."
+}

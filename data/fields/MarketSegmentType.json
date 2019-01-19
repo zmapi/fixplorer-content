@@ -1,0 +1,9 @@
+{
+	"type": "int",
+	"short_description": "Used to classify the type of market segment.",
+	"values": {
+		"1": "Pool<br>Used when multiple market segments are being grouped or pooled together.",
+		"2": "Retail",
+		"3": "Wholesale"
+	}
+}

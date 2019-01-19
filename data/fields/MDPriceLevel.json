@@ -1,0 +1,4 @@
+{
+	"type": "int",
+	"short_description": "Relative position of the price level of the MDEntry in <a href=\"glossary/mbp_order_book\">MBP book</a>."
+}

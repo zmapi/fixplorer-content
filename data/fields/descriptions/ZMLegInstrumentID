@@ -1,0 +1,3 @@
+<p><a href="glossary/instrument">Instrument</a> identifier for a leg definition. This must be unique for each connector.</p>
+
+<p>ZMLegInstrumentID is case-sensitive.</p>

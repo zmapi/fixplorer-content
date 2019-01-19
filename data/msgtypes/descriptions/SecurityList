@@ -1,0 +1,3 @@
+<p>The SecurityList message is used to return a list of securities that matches the criteria specified in a <a href="msgtypes/SecurityListRequest">SecurityListRequest message</a>.</p>
+
+<p>SecurityList responses will be emitted via PUB if subscription is specified in SecurityListRequest and some of the matching instrument information is changed.</p>

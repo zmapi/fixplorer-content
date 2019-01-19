@@ -1,0 +1,2 @@
+Timestamp represented as 64-bit unsigned integer. Number of nanoseconds since
+<a href="https://en.wikipedia.org/wiki/Unix_time">UNIX epoch</a> in UTC.

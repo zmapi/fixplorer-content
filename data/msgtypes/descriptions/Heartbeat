@@ -1,0 +1,1 @@
+<p>The Heartbeat monitors the status of the communication link. Heartbeat message will be emitted as a response to a <a href="msgtypes/TestRequest">TestRequest</a> message.</p>

@@ -1,0 +1,10 @@
+{
+	"md": true,
+	"ac": true,
+	"fields": [
+		{"name": "ZMRefFieldName"},
+		{"name": "ZMRejectReason", "required": true},
+		{"name": "Text"}
+	],
+	"short_description": "ZMReject messages are returned on any kind of error condition"
+}

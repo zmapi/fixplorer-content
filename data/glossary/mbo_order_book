@@ -1,0 +1,5 @@
+# vim: ft=plain
+
+<p>Market By Order (MBO) order book is a full order book representation where every single order is visible. There is no aggregation.</p>
+
+<p>Each order in the MBO book has OrderID. It can be referenced in the future with this identifier, whenever there is a change in that particular order. Price (MDEntryPx) and size (MDEntrySize) are naturally shown. Some MBO books may have extra information such as MDEntryPositionNo and TimeInForce.</p>

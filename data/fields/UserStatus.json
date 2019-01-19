@@ -1,0 +1,14 @@
+{
+	"type": "int",
+	"short_description": "Indicates the status of a user.",
+	"values": {
+		"1": "Logged in",
+		"2": "Not logged in",
+		"3": "User not recognized",
+		"4": "Password incorrect",
+		"6": "Other",
+		"7": "Forced user logout",
+		"8": "Session shutdown warning",
+		"100": "Throttle parameters changed"
+	}
+}

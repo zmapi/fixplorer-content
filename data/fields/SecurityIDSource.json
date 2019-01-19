@@ -1,0 +1,26 @@
+{
+	"type": "str",
+	"short_description": "Identifies the class or source of the <a href=\"fields/SecurityID\">SecurityID field</a>.",
+	"values": {
+		"1": "CUSIP",
+		"2": "SEDOL",
+		"3": "QUIK",
+		"4": "ISIN",
+		"5": "RIC",
+		"A": "Bloomberg Symbol",
+		"B": "Wertpapier",
+		"C": "Dutch",
+		"D": "Valoren",
+		"E": "Sicovam",
+		"F": "Belgian",
+		"G": "\"Common\" (Clearstream and Euroclear)",
+		"I": "ISDA/FpML product specification",
+		"K": "ISDA/FpML product URL",
+		"N": "Markit RED entity CLIP",
+		"P": "Markit RED pair CLIP",
+		"Q": "CFTC commodity code",
+		"S": "Financial Instrument Global Identifier (FIGI)",
+		"V": "Fidessa Instrument Mnemonic (FIM)",
+		"W": "Index name - standard name of the index"
+	}
+}

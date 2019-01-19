@@ -1,0 +1,8 @@
+{
+	"type": "bool",
+	"short_description": "Specifies whether Market By Order (MBO) or Market By Price (MBP) order book format should be used.",
+	"values": {
+		"true": "MBP is used",
+		"false": "MBO is used"
+	}
+}

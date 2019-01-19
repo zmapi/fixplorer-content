@@ -1,0 +1,4 @@
+{
+	"type": "str",
+	"short_description": "UNIX-like path to a resource."
+}

@@ -1,0 +1,12 @@
+{
+	"type": "int",
+	"short_description": "Denotes the reason for the opening delay or trading halt",
+	"values": {
+		"0": "News dissemination",
+		"1": "Order influx",
+		"2": "Order imbalance",
+		"3" :"Additional information",
+		"4": "News pending",
+		"5": "Equipment changeover"
+	}
+}

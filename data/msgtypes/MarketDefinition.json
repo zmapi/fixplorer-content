@@ -1,0 +1,18 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "MarketID", "required": true},
+		{"name": "MarketSegmentID"},
+		{"name": "MarketSegmentDesc"},
+		{"name": "InstrumentScopeGrp"},
+		{"name": "Currency", "comment": "The default trading currency"},
+		{"name": "BaseTradingRules"},
+		{"name": "OrdTypeRules"},
+		{"name": "TimeInForceRules"},
+		{"name": "MatchRules"},
+		{"name": "TransactTime"},
+		{"name": "Text"}
+	],
+	"short_description": "Request message for getting information about market structure."
+}

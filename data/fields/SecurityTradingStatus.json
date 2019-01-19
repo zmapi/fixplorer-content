@@ -1,0 +1,19 @@
+{
+	"type": "int",
+	"short_description": "Trading status of the <a href=\"glossary/market\">market</a>.",
+	"values": {
+		"1": "Opening delay",
+		"2": "Trading halt",
+		"3": "Resume",
+		"4": "No open / no resume",
+		"17": "Ready to trade (start of session)",
+		"18": "Not available for trading (end of session)",
+		"20": "Unknown or invalid",
+		"21": "Pre-open",
+		"23": "Fast market",
+		"24": "Pre-cross - system is in a pre-cross state allowing market to respond to either side of the cross",
+		"25": "Cross - system has crossed a percentage of the orders and allows market to respond prior to crossing remaining portion",
+		"26": "Post-close",
+		"27": "No-cancel"
+	}
+}

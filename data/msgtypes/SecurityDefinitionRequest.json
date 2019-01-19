@@ -1,0 +1,12 @@
+{
+	"ac": true,
+	"md": true,
+	"fields": [
+		{"name": "SecurityReqID", "comment": "Required if <a href=\"fields/SubscriptionRequestType\">SubscriptionRequestType</a> is '1' or '2'."},
+		{"name": "ZMInstrumentID", "required": true},
+		{"name": "MarketID", "comment": "Show only selected MarketID"},
+		{"name": "MarketSegmentID", "comment": "Show only selected MarketSegmentID"},
+		{"name": "SubscriptionRequestType", "comment": "Defaults to snapshot (0)"}
+	],
+	"short_description": "Request all available information about an instrument."
+}

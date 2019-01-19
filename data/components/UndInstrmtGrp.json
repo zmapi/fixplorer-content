@@ -1,0 +1,6 @@
+{
+	"short_description": "Information about underlying instruments.",
+	"fields": [
+		{"name": "NoUnderlyings", "required": true}
+	]
+}

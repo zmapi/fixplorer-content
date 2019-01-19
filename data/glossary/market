@@ -1,0 +1,3 @@
+<p><a href="glossary/instrument">Instruments</a> are traded in markets. Each instrument is associated with one or more markets where it is traded. Markets define rules on how the instrument is traded. Markets are further split into different <a href="glossary/market_segment">segments</a> that can have diffent trading rules each. <a href="fields/MarketID">MarketID</a> is a group identifier for market segments that are related to each other. To identify a market, both MarketID and MarketSegmentID are required.</p>
+
+<p>For example MarketID "CME" could have two different segments (MarketSegmentID): "Floor" and "Electronic". Both of these segments may have different rules and <a href="glossary/trading_session">trading sessions</a>.</p>

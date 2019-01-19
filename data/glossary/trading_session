@@ -1,0 +1,8 @@
+# vim: ft=plain
+
+<p>Each <a href="glossary/instrument">instrument that is traded on a particular <a href="glossary/market">market</a> has one or more trading sessions, each of which can define customized trading rules.</p>
+
+<p>For example a market could have the following trading sessions:</p>
+<p>Opening auction  - Order book is not crossed, instead orders are collected in a specifed time window and crossed once the trading session ends.</p>
+<p>Continuous trading - Order book is continuously crossed without delays.</p>
+<p>Closing auction - Same as opening auction, this time at the market close.</p>

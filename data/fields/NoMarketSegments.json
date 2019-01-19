@@ -1,0 +1,9 @@
+{
+	"type": "RepeatingGroup",
+	"fields": [
+		{"name": "MarketID", "required": true},
+		{"name": "MarketSegmentID", "required": true},
+		{"name": "SecurityTradingRules"},
+		{"name": "StrikeRules"}
+	]
+}

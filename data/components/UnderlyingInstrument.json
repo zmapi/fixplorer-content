@@ -1,0 +1,7 @@
+{
+	"short_description": "Information about underlying instrument.",
+	"fields": [
+		{"name": "ZMUnderlyingInstrumentID"},
+		{"name": "UnderlyingSymbol"}
+	]
+}

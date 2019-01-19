@@ -1,0 +1,1 @@
+<p>The BusinessMessageReject is returned whenever message fulfills session-level rules but is still rejected for some reason.</p>

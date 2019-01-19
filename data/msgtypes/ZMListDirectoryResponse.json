@@ -1,0 +1,8 @@
+{
+	"ac": "true",
+	"md": "true",
+	"fields": [
+		{"name": "ZMDirEntries", "required": true}
+	],
+	"short_description": "Reply message to ZMListDirectory request."
+}

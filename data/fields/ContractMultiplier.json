@@ -1,0 +1,4 @@
+{
+	"type": "float",
+	"short_description": "Specifies the ratio or multiply factor to convert from \"nominal\" units to actual units (e.g. shares) (e.g. 1.0, 100, 1000, etc)."
+}
